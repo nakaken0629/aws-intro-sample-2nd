@@ -40,6 +40,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    ansi (1.5.0)
     arel (8.0.0)
     bindex (0.8.1)
     builder (3.2.4)
@@ -82,7 +83,12 @@ GEM
     method_source (1.0.0)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
-    minitest (5.14.1)
+    minitest (5.10.3)
+    minitest-reporters (1.1.19)
+      ansi
+      builder
+      minitest (>= 5.0)
+      ruby-progressbar
     mysql2 (0.5.3)
     nio4r (2.5.2)
     nokogiri (1.10.10)
@@ -119,6 +125,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    ruby-progressbar (1.10.1)
     ruby_dep (1.5.0)
     rubyzip (2.3.0)
     sass (3.7.4)
@@ -176,6 +183,8 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
+  minitest (~> 5.10.3)
+  minitest-reporters (~> 1.1.14)
   mysql2 (>= 0.3.18, < 0.6.0)
   puma (~> 3.7)
   rails (~> 5.1.6)
