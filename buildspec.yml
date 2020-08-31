@@ -1,6 +1,11 @@
 version: 0.2
 
 phases:
-  post_build:
+  install:
+    runtime-versions:
+      ruby: 2.7
     commands:
-      - aws s3 sync --exact-timestamps --delete --exclude ".git" . s3://aws-intro-sample-deploy
+      - gem update --system
+      - echo Installing Bundler...
+      - gem install bundler
+      - bundle install
