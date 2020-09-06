@@ -2,6 +2,6 @@
 version: 0.0
 os: linux
 files:
-  - source: /                           # 展開元のS3ディレクトリ
-    destination: /var/www/railstutorial # 展開するディレクトリ
+  - source: /                        # 展開元のS3ディレクトリ
+    destination: /var/www/sampleqpp  # 展開するディレクトリ
 

@@ -16,3 +16,6 @@ phases:
     commands:
       - bin/rails db:migrate RAILS_ENV=test
       - bin/rails test
+  post_build:
+    commands:
+      - aws s3 sync release s3://aws-intro-sample-deploy --delete --acl public-read 
