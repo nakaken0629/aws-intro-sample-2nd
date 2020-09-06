@@ -4,9 +4,9 @@ phases:
   install:
     runtime-versions:
       ruby: 2.7
-    pre-build:
-      - yum install mysql-server
-      - gem update --system
-      - echo Installing Bundler...
-      - gem install bundler
-      - bundle install
+  pre-build:
+    - yum install mysql-server
+    - gem update --system
+    - echo Installing Bundler...
+    - gem install bundler
+    - bundle install
