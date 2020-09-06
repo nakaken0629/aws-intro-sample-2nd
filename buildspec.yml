@@ -6,7 +6,18 @@ phases:
       ruby: 2.7
   pre_build:
     commands:
-      - yum install mysql-server
+      - echo "install mysql server 5.6..."
+      - sudo yum update
+      - sudo yum localinstall https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm -y
+      - sudo yum-config-manager --disable mysql80-community
+      - sudo yum-config-manager --enable mysql57-community
+      - yum info mysql-community-server
+      - sudo yum install mysql-community-server -y
+      - mysqld --version
+      - sudo systemctl start mysqld.service
+      - sudo systemctl enable mysqld.service
+      - systemctl status mysqld.service
+      - echo "install ruby on rails..."
       - gem update --system
       - echo Installing Bundler...
       - gem install bundler
