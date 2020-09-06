@@ -18,4 +18,7 @@ phases:
 #      - bin/rails test
   post_build:
     commands:
-      - aws s3 sync . s3://aws-intro-sample-deploy --delete --exclude ".git/*"
+      - rm -fr .git
+      - rm .gitignore
+      - tar cvzf aws-intro-sample.tgz .
+      - aws s3 sync aws-intro-sample.tgz s3://aws-intro-sample-deploy --delete --exclude ".git/*"
