@@ -4,7 +4,7 @@ phases:
   install:
     runtime-versions:
       ruby: 2.7
-  pre-build:
+  pre_build:
     commands:
       - yum install mysql-server
       - gem update --system
