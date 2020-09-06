@@ -7,19 +7,13 @@ phases:
   pre_build:
     commands:
       - yum -y install yum-utils
-      - echo Installing mysql server 5.6...
-      - yum localinstall https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm -y
-      - yum-config-manager --disable mysql80-community
-      - yum-config-manager --enable mysql57-community
-      - yum info mysql-community-server
-      - yum install mysql-community-server -y
-      - mysqld --version
-      - mysql.server start
+      - echo Installing sqlite
+      - yum -y install sqlite
       - echo Installing ruby on rails...
       - gem update --system
       - gem install bundler
       - bundle install
   build:
     commands:
-      - rails db:migrate
+      - rails db:migrate RAILS_ENV=test
       - rails test

@@ -50,6 +50,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'minitest',                 '~> 5.10.3'
   gem 'minitest-reporters',       '~> 1.1.14'
+  gem 'sqlite3'
 end
 
 group :development do
