@@ -4,18 +4,18 @@ phases:
   install:
     runtime-versions:
       ruby: 2.6
-  pre_build:
-    commands:
-      - echo Installing sqlite
-      - yum -y install sqlite
-      - echo Installing ruby on rails...
-      - gem update --system
-      - gem install bundler -v 1.17.3
-      - bundle install
-  build:
-    commands:
-      - bin/rails db:migrate RAILS_ENV=test
-      - bin/rails test
+#  pre_build:
+#    commands:
+#      - echo Installing sqlite
+#      - yum -y install sqlite
+#      - echo Installing ruby on rails...
+#      - gem update --system
+#      - gem install bundler -v 1.17.3
+#      - bundle install
+#  build:
+#    commands:
+#      - bin/rails db:migrate RAILS_ENV=test
+#      - bin/rails test
   post_build:
     commands:
-      - aws s3 sync release s3://aws-intro-sample-deploy --delete --acl public-read 
+      - aws s3 sync . s3://aws-intro-sample-deploy --delete --acl public-read 
