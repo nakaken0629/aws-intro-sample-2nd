@@ -21,4 +21,4 @@ phases:
       - pwd
       - tar cvzf aws-intro-sample.tgz Gemfile Gemfile.lock Rakefile app bin config config.ru db lib log package.json public test tmp vendor
       - ls
-      - aws s3 sync aws-intro-sample.tgz s3://aws-intro-sample-deploy --delete --exclude ".git/*"
+      - aws s3 cp aws-intro-sample.tgz s3://aws-intro-sample-deploy/
