@@ -14,13 +14,12 @@ phases:
       - yum info mysql-community-server
       - yum install mysql-community-server -y
       - mysqld --version
-      - systemctl start mysqld.service
-      - systemctl enable mysqld.service
-      - systemctl status mysqld.service
+      - mysql.server start
       - echo Installing ruby on rails...
       - gem update --system
       - gem install bundler
       - bundle install
   build:
     commands:
+      - rails db:migrate
       - rails test
