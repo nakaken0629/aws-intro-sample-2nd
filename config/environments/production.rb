@@ -66,15 +66,15 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  host = ENV['AWS_INTRO_SAMPLE_SMTP_HOST']
+  host = ENV['AWS_INTRO_SAMPLE_HOST']
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
-    :address        => ENV['AWS_INTRO_SAMPLE_ADDRESS'],
+    :address        => ENV['AWS_INTRO_SAMPLE_SMTP_ADDRESS'],
     :port           => '465',
     :authentication => :plain,
     :user_name      => ENV['AWS_INTRO_SAMPLE_SMTP_USERNAME'],
     :password       => ENV['AWS_INTRO_SAMPLE_SMTP_PASSWORD'],
-    :domain         => ENV['AWS_INTRO_SAMPLE_DOMAINN'],
+    :domain         => ENV['AWS_INTRO_SAMPLE_SMTP_DOMAINN'],
     :enable_starttls_auto => true
   }
 
