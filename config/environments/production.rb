@@ -74,8 +74,6 @@ Rails.application.configure do
     :authentication => :plain,
     :user_name      => ENV['AWS_INTRO_SAMPLE_SMTP_USERNAME'],
     :password       => ENV['AWS_INTRO_SAMPLE_SMTP_PASSWORD'],
-    :domain         => ENV['AWS_INTRO_SAMPLE_SMTP_DOMAINN'],
-    :enable_starttls_auto => true
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
