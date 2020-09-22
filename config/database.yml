@@ -49,7 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: sample_app_production
+  database: sample_app
   username: sample_app
-  password: <%= ENV['SAMPLE_APP_DATABASE_PASSWORD'] %>
+  password: <%= ENV['AWS_INTRO_SAMPLE_DATABASE_PASSWORD'] %>
   host: db.home
