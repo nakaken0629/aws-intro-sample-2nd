@@ -69,6 +69,7 @@ Rails.application.configure do
   host = ENV['AWS_INTRO_SAMPLE_HOST']
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
+    :domain         => ENV['AWS_INTRO_SAMPLE_SMTP_DOMAINN'],
     :address        => ENV['AWS_INTRO_SAMPLE_SMTP_ADDRESS'],
     :port           => '465',
     :authentication => :plain,
