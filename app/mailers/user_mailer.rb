@@ -1,4 +1,5 @@
 class UserMailer < ApplicationMailer
+  default from: "no-reply@aws-intro-sample.com"
 
   def account_activation(user)
     @user = user
