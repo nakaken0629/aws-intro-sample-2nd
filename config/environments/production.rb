@@ -73,6 +73,7 @@ Rails.application.configure do
     :address        => ENV['AWS_INTRO_SAMPLE_SMTP_ADDRESS'],
     :port           => '465',
     :authentication => :plain,
+    :ssl            => true,
     :user_name      => ENV['AWS_INTRO_SAMPLE_SMTP_USERNAME'],
     :password       => ENV['AWS_INTRO_SAMPLE_SMTP_PASSWORD'],
   }
