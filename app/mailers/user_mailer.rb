@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-  default from: "no-reply@aws-intro-sample.com"
+  default from: "no-reply@#{ENV['AWS_INTRO_SAMPLE_SMTP_DOMAIN']}"
 
   def account_activation(user)
     @user = user
